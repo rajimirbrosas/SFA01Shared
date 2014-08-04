@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>def_ae_manager@demo.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>def_am_manager@demo.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>fsi.aemanager@73demo.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>fsi.ammanager@73demo.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>hea_ae_manager@demo.com</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>hea_am_manager@demo.com</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Trigger Opportunity Creation</label>
+        <name>Trigger_Opportunity_Creation</name>
+    </approvalStep>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>Account.Owner.Id &lt;&gt; Owner.Id</formula>
+    </entryCriteria>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionRecordLock>true</finalRejectionRecordLock>
+    <label>OpportunityOwnerCheck</label>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

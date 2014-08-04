@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddProduct</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChoosePricebook</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>EditAllProduct</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Curren_Cumulative_Target_Revenue__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Current Cumulative Target Revenue</description>
+        <externalId>false</externalId>
+        <label>Current Cumulative Target Revenue</label>
+        <referenceTo>Sales_Target_Revenue__c</referenceTo>
+        <relationshipLabel>Opportunity Product (Current Cumulative Target Revenue)</relationshipLabel>
+        <relationshipName>Opportunity_Product3</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Discount</fullName>
+    </fields>
+    <fields>
+        <fullName>ListPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>OpportunityId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product2Id</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ProductCode</fullName>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(PricebookEntry.Product2.Product_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity</fullName>
+    </fields>
+    <fields>
+        <fullName>Quarter__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(MONTH(If(ISBLANK(Opportunity.Billing_Effective_Date__c), Opportunity.CloseDate ,Opportunity.Billing_Effective_Date__c)),1,&quot;Q1&quot;,2,&quot;Q1&quot;,3,&quot;Q1&quot;,4,&quot;Q2&quot;,5,&quot;Q2&quot;,6,&quot;Q2&quot;,7,&quot;Q3&quot;,8,&quot;Q3&quot;,9,&quot;Q3&quot;,10,&quot;Q4&quot;,11,&quot;Q4&quot;,&quot;Q4&quot;)</formula>
+        <label>Quarter</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Realized_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity.Realized_Revenue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Realized Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_Margin__c</fullName>
+        <externalId>false</externalId>
+        <formula>( Target_Revenue_Id_Account__r.Target_Revenue__c  -  Realized_Revenue__c) * 3</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Revenue Margin</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ServiceDate</fullName>
+    </fields>
+    <fields>
+        <fullName>Subtotal</fullName>
+    </fields>
+    <fields>
+        <fullName>Target_Revenue_Id_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Target Revenue Id Account</label>
+        <referenceTo>Sales_Target_Revenue__c</referenceTo>
+        <relationshipLabel>Opportunity Product</relationshipLabel>
+        <relationshipName>Opportunity_Product</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Target_Revenue_Id_LOB_Vertical__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Target Revenue Id LOB Vertical</label>
+        <referenceTo>Sales_Target_Revenue__c</referenceTo>
+        <relationshipLabel>Opportunity Product (Target Revenue Id LOB Vertical)</relationshipLabel>
+        <relationshipName>Opportunity_Product4</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Target_Revenue_Id_LOB__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Target Revenue Id LOB</label>
+        <referenceTo>Sales_Target_Revenue__c</referenceTo>
+        <relationshipLabel>Opportunity Product (Target Revenue Id LOB)</relationshipLabel>
+        <relationshipName>Opportunity_Product5</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Target_Revenue_Id_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Target Revenue Id Product</label>
+        <referenceTo>Sales_Target_Revenue__c</referenceTo>
+        <relationshipLabel>Opportunity Product (Target Revenue Id Product)</relationshipLabel>
+        <relationshipName>Opportunity_Product2</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Target_Revenue_Id_User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Target Revenue Id User</label>
+        <referenceTo>Sales_Target_Revenue__c</referenceTo>
+        <relationshipLabel>Opportunity Product (Target Revenue Id User)</relationshipLabel>
+        <relationshipName>Opportunity_Product1</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TotalPrice</fullName>
+    </fields>
+    <fields>
+        <fullName>UnitPrice</fullName>
+    </fields>
+</CustomObject>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>WorkGoal$Owner</field>
+    </columns>
+    <columns>
+        <field>WorkGoal$DueDate</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>WorkGoal$Progress</field>
+    </columns>
+    <columns>
+        <field>WorkGoal.Children$Name</field>
+    </columns>
+    <columns>
+        <field>WorkGoal.Children$ActualValue</field>
+    </columns>
+    <columns>
+        <field>WorkGoal.Children$TargetValue</field>
+    </columns>
+    <columns>
+        <field>WorkGoal.Children$DueDate</field>
+    </columns>
+    <description>Work.com: This sample report answers questions like:-how are key company goals progressing?</description>
+    <filter>
+        <criteriaItems>
+            <column>WorkGoal$Type</column>
+            <operator>equals</operator>
+            <value>2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>WorkGoal$IsKeyCompanyGoal</column>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>WorkGoal$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Key Company Goal Progress</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Goals_and_Metrics__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>WorkGoal$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>WorkFeedbackQuestion.Number:MAX</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Order of Questions in the Summary</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Order</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartSummaries>
+            <axisBinding>y</axisBinding>
+            <column>FORMULA1</column>
+        </chartSummaries>
+        <chartType>LineGrouped</chartType>
+        <enableHoverLabels>false</enableHoverLabels>
+        <expandOthers>true</expandOthers>
+        <groupingColumn>WorkPerformanceCycle.FeedbackQuestionSets.FeedbackQuestions$Type</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <secondaryGroupingColumn>WorkPerformanceCycle.FeedbackQuestionSets.FeedbackQuestions$Text</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <showPercentage>false</showPercentage>
+        <showTotal>false</showTotal>
+        <showValues>false</showValues>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>WorkPerformanceCycle.FeedbackQuestionSets.FeedbackQuestions$Number</field>
+    </columns>
+    <description>Which questions were asked in each Self Summary Cycle?</description>
+    <filter>
+        <criteriaItems>
+            <column>WorkPerformanceCycle$Name</column>
+            <operator>equals</operator>
+            <value>2013-Q4 - Ride Along</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>WorkPerformanceCycle.FeedbackQuestionSets$Name</column>
+            <operator>equals</operator>
+            <value>Self Summary</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>WorkPerformanceCycle.FeedbackQuestionSets.FeedbackQuestions$Type</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>WorkPerformanceCycle.FeedbackQuestionSets.FeedbackQuestions$Text</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Self Summary Questions - X</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Performance_Cycles_with_Questions__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>WorkPerformanceCycle$ActivityFrom</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

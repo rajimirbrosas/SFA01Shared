@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>WorkGoal$Owner</field>
+    </columns>
+    <columns>
+        <field>WorkGoal$Progress</field>
+    </columns>
+    <columns>
+        <field>WorkGoal$DueDate</field>
+    </columns>
+    <columns>
+        <field>WorkGoal.FeedItems$Body</field>
+    </columns>
+    <columns>
+        <field>WorkGoal.FeedItems$LikeCount</field>
+    </columns>
+    <columns>
+        <field>WorkGoal.FeedItems$CommentCount</field>
+    </columns>
+    <description>Work.com: This sample report lists the most active goals based on posts in the goals feed.</description>
+    <filter>
+        <criteriaItems>
+            <column>WorkGoal$Type</column>
+            <operator>equals</operator>
+            <value>2</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>WorkGoal$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Most active goals by Feed posts</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Goals_Feed__c</reportType>
+    <scope>user</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>WorkGoal$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
